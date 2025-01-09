@@ -3,3 +3,55 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.container {
+  width: 1224px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dedede;
+  padding: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.navbar {
+  display: flex;
+  gap: 4rem;
+  font-size: 1.5rem;
+}
+
+/* MAIN */
+
+main {
+  min-height: 100vh;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* FOOTER */
+
+.main-footer {
+  background-color: #ababab;
+  padding: 1.4rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
