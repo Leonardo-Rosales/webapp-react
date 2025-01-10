@@ -5,9 +5,9 @@ export default function MovieCard({ movie }) {
     const { title, image, director, genre, release_year, abstract, id } = movie
 
     return (
-        <div>
+        <div className="card-movie">
             <figure>
-                <img src={`http://localhost:3000/${image}`} alt="" />
+                <img className="img-card" src={`http://localhost:3000/${image}`} alt="" />
             </figure>
             <h3>{title}</h3>
             <p>{director}</p>

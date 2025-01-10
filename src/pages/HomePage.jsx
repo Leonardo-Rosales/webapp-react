@@ -30,7 +30,7 @@ export default function HomePage() {
         <>
             <section>
                 <h1>Home Page</h1>
-                <div>
+                <div className="container">
                     <ul className="row">
                         {movies.map(movie => {
                             return (

@@ -26,10 +26,14 @@ img {
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 3rem;
 }
 
 .col-33 {
   width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
 }
 
 /* HEADER */
@@ -40,7 +44,6 @@ img {
   align-items: center;
   background-color: #dedede;
   padding: 1.4rem;
-  margin-bottom: 2rem;
 }
 
 .navbar {
@@ -52,7 +55,8 @@ img {
 /* MAIN */
 
 main {
-  min-height: 100vh;
+  padding: 2rem;
+  background-color: #1B4F72;
 }
 
 main h1 {
@@ -61,22 +65,77 @@ main h1 {
   margin-bottom: 3rem;
 }
 
-.movie-page {
-  display: flex;
-}
-
-.img-page {
-  width: 250px;
-}
-
 .page-body {
   display: flex;
   flex-direction: column;
 }
 
-.reviews {
+.card-movie {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.img-card {
+  height: 340px;
+  object-position: center;
+}
+
+.card-movie h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-movie p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.card-movie strong {
+  font-size: 1rem;
+  color: #000;
+  display: block;
+  margin-top: 10px;
+}
+
+.card-movie a {
+  font-size: 0.9rem;
+  color: #007bff;
+}
+
+.movie-page {
+  display: flex;
+  gap: 2rem;
+}
+
+.img-page {
+  width: 200px;
+}
+
+.body-page {
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
+}
+
+.title {
+  color: rgba(212, 255, 0, 0.833);
+}
+
+.reviews {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.reviews-title {
+  margin-top: 2rem;
+  color: rgba(212, 255, 0, 0.833);
 }
 
 

@@ -35,15 +35,16 @@ export default function MoviePage() {
                     <figure className="img-page">
                         <img src={`http://localhost:3000/${movie.image}`} alt="" />
                     </figure>
-                    <div className="page-body">
-                        <h2>{movie.title}</h2>
-                        <p>{movie.director}</p>
-                        <p>{movie.genre}</p>
-                        <strong>{movie.release_year}</strong>
-                        <p>{movie.abstract}</p>
+                    <div className="body-page">
+                        <h2 className="title">{movie.title}</h2>
+                        <p>Director: {movie.director}</p>
+                        <p>Genre: {movie.genre}</p>
+                        <strong>Release year: {movie.release_year}</strong>
+                        <p>Abstract: {movie.abstract}</p>
                     </div>
                 </div>
                 <div>
+                    <h2 className="reviews-title">Reviews</h2>
                     {movie.reviews.length ?
                         <ul>
                             {movie.reviews.map(review => (
