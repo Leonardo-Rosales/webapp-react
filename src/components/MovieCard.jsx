@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export default function MovieCard({ movie }) {
 
-    const { title, image, director, genre, release_year, abstract } = movie
+    const { title, image, director, genre, release_year, abstract, id } = movie
 
     return (
         <div>
@@ -14,6 +14,7 @@ export default function MovieCard({ movie }) {
             <p>{genre}</p>
             <strong>{release_year}</strong>
             <p>{abstract}</p>
+            <Link to={`/movies/${id}`}>Read more</Link>
         </div>
     )
 }
