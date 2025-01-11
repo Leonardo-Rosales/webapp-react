@@ -9,12 +9,14 @@ export default function MovieCard({ movie }) {
             <figure>
                 <img className="img-card" src={`http://localhost:3000/${image}`} alt="" />
             </figure>
-            <h3>{title}</h3>
-            <p>{director}</p>
-            <p>{genre}</p>
-            <strong>{release_year}</strong>
-            <p>{abstract}</p>
-            <Link to={`/movies/${id}`}>Read more</Link>
+            <div className="body-card">
+                <h3>{title}</h3>
+                <p>{director}</p>
+                <p>{genre}</p>
+                <strong>{release_year}</strong>
+                <p>{abstract}</p>
+                <Link to={`/movies/${id}`}>Read more</Link>
+            </div>
         </div>
     )
 }
