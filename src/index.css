@@ -151,6 +151,19 @@ main h1 {
 
 /* FORM */
 
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
 .form-title {
   margin: 2rem 0;
   text-align: center;
@@ -160,11 +173,27 @@ main h1 {
 form p {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+}
+
+form p select,
+form p input {
+  height: 30px;
+
+}
+
+form p textarea {
+  height: 70px;
 }
 
 form button {
-  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 12px 22px;
+  background-color: #04AA6D;
+  color: white;
+  border-radius: 8px;
+  margin-top: 2rem;
 }
 
 
