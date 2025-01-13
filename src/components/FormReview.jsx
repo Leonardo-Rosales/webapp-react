@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import { text } from "@fortawesome/fontawesome-svg-core"
 
 const initialFormData = {
 
@@ -12,6 +13,7 @@ const initialFormData = {
 export default function FormReview({ id, fetchMovie }) {
 
     const [formData, setFormData] = useState(initialFormData)
+    const [isFormValid, setIsFormValid] = useState(true)
 
     function onFormChange(e) {
 
@@ -26,6 +28,26 @@ export default function FormReview({ id, fetchMovie }) {
     function storeReview(e) {
 
         e.preventDefault()
+        setIsFormValid(true)
+        console.log('Salva la review sul server');
+
+
+        const data = {
+            text: formData.text.trim() || undefined,
+            name: formData.name.trim(),
+            vote: parseInt(formData.vote)
+        }
+
+        if (
+            !data.name ||
+            !data.vote ||
+            !data.vote < 1 ||
+            !data.vote > 5
+        ) {
+            console.log('Form is not valid');
+            setIsFormValid(false)
+
+        }
 
         axios.post(`http://localhost:3000/api/movies/${id}/reviews`, formData)
 
@@ -35,6 +57,7 @@ export default function FormReview({ id, fetchMovie }) {
                 fetchMovie()
             }).catch(err => {
                 console.error(err);
+                setIsFormValid(false)
 
             })
 
@@ -69,6 +92,9 @@ export default function FormReview({ id, fetchMovie }) {
                         </select>
                     </p>
                     <div>
+                        {isFormValid === false &&
+                            <div>I dati non sono validi</div>
+                        }
                         <button>Invia</button>
                     </div>
                 </form>
