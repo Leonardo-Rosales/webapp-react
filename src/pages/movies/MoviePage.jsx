@@ -2,6 +2,7 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import ReviewCard from "../../components/ReviewCard"
+import FormReview from "../../components/FormReview"
 
 
 export default function MoviePage() {
@@ -54,6 +55,7 @@ export default function MoviePage() {
                         <div>Nessuna recensione</div>
                     }
                 </div>
+                <FormReview id={id} fetchMovie={fetchMovie} />
             </section>
         </> : <p>loading</p>
     )

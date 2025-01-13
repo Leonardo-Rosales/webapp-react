@@ -149,6 +149,24 @@ main h1 {
   color: rgba(212, 255, 0, 0.833);
 }
 
+/* FORM */
+
+.form-title {
+  margin: 2rem 0;
+  text-align: center;
+  color: rgba(212, 255, 0, 0.833);
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+form button {
+  margin-top: 1rem;
+}
+
 
 /* FOOTER */
 
