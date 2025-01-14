@@ -4,13 +4,17 @@ import HomePage from './pages/HomePage'
 import ContactPage from './pages/ContactPage'
 import AboutPage from './pages/AboutPage'
 import MoviePage from './pages/movies/MoviePage'
+import GlobalContext from "./context/globalContext"
+import { useState } from "react"
 
 
 
 function App() {
 
+  const [isLoading, setIsLoading] = useState(false)
+
   return (
-    <>
+    <GlobalContext.Provider value={{ isLoading, setIsLoading }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
@@ -21,7 +25,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </GlobalContext.Provider>
   )
 }
 

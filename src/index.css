@@ -205,3 +205,21 @@ form button {
   text-align: center;
   font-size: 1.8rem;
 }
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B4F72;
+  opacity: 50%;
+  z-index: 999;
+}
+
+.spin {
+  font-size: 100px;
+}

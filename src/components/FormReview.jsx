@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import axios from "axios"
 import { text } from "@fortawesome/fontawesome-svg-core"
+import GlobalContext from "../context/globalContext"
 
 const initialFormData = {
 
@@ -12,6 +13,8 @@ const initialFormData = {
 
 export default function FormReview({ id, fetchMovie }) {
 
+
+    const { setIsLoading } = useContext(GlobalContext)
     const [formData, setFormData] = useState(initialFormData)
     const [isFormValid, setIsFormValid] = useState(true)
 
@@ -49,6 +52,8 @@ export default function FormReview({ id, fetchMovie }) {
 
         }
 
+        setIsLoading(true)
+
         axios.post(`http://localhost:3000/api/movies/${id}/reviews`, formData)
 
             .then(res => {
@@ -58,7 +63,7 @@ export default function FormReview({ id, fetchMovie }) {
             }).catch(err => {
                 console.error(err);
                 setIsFormValid(false)
-
+                setIsLoading(false)
             })
 
     }

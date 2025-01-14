@@ -1,16 +1,22 @@
 import axios from "axios"
 import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import ReviewCard from "../../components/ReviewCard"
 import FormReview from "../../components/FormReview"
+import GlobalContext from "../../context/globalContext"
 
 
 export default function MoviePage() {
+
+    const { setIsLoading } = useContext(GlobalContext)
 
     const [movie, setMovie] = useState(null)
     const { id } = useParams()
 
     function fetchMovie() {
+
+        setIsLoading(true)
+
         axios.get(`http://localhost:3000/api/movies/${id}`)
 
             .then(res => {
@@ -21,6 +27,9 @@ export default function MoviePage() {
                 console.error(err);
 
             })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 
     useEffect(() => {
@@ -29,7 +38,7 @@ export default function MoviePage() {
 
 
     return (
-        movie ? <>
+        movie && <>
             <section>
                 <h1>Movie Page</h1>
                 <div className="movie-page">
@@ -57,6 +66,6 @@ export default function MoviePage() {
                 </div>
                 <FormReview id={id} fetchMovie={fetchMovie} />
             </section>
-        </> : <p>loading</p>
+        </>
     )
 }
